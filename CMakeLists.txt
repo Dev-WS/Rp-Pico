@@ -17,8 +17,8 @@ set(PICO_EXAMPLES_PATH ${PROJECT_SOURCE_DIR})
 pico_sdk_init()
 
 # Add blink example
-add_subdirectory(blink)
-
+add_subdirectory(src)
+add_subdirectory(rtos)
 
 
 add_compile_options(-Wall

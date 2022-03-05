@@ -143,7 +143,10 @@
 /home/admin-w/Programming/Pico_new/pico-01/build/pico-sdk/src/rp2040/hardware_structs/CMakeFiles/edit_cache.dir
 /home/admin-w/Programming/Pico_new/pico-01/build/pico-sdk/docs/CMakeFiles/rebuild_cache.dir
 /home/admin-w/Programming/Pico_new/pico-01/build/pico-sdk/docs/CMakeFiles/edit_cache.dir
-/home/admin-w/Programming/Pico_new/pico-01/build/blink/CMakeFiles/rebuild_cache.dir
-/home/admin-w/Programming/Pico_new/pico-01/build/blink/CMakeFiles/edit_cache.dir
-/home/admin-w/Programming/Pico_new/pico-01/build/blink/CMakeFiles/ELF2UF2Build.dir
-/home/admin-w/Programming/Pico_new/pico-01/build/blink/CMakeFiles/blink.dir
+/home/admin-w/Programming/Pico_new/pico-01/build/src/CMakeFiles/rebuild_cache.dir
+/home/admin-w/Programming/Pico_new/pico-01/build/src/CMakeFiles/edit_cache.dir
+/home/admin-w/Programming/Pico_new/pico-01/build/src/CMakeFiles/ELF2UF2Build.dir
+/home/admin-w/Programming/Pico_new/pico-01/build/src/CMakeFiles/src.dir
+/home/admin-w/Programming/Pico_new/pico-01/build/rtos/CMakeFiles/rebuild_cache.dir
+/home/admin-w/Programming/Pico_new/pico-01/build/rtos/CMakeFiles/edit_cache.dir
+/home/admin-w/Programming/Pico_new/pico-01/build/rtos/CMakeFiles/freertos.dir
