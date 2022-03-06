@@ -16,10 +16,21 @@ set(PICO_EXAMPLES_PATH ${PROJECT_SOURCE_DIR})
 # Initialize the SDK
 pico_sdk_init()
 
+add_library(ST7789_lib INTERFACE)
+
+
+# target_sources(ST7789_lib INTERFACE
+#     ${CMAKE_CURRENT_LIST_DIR}/ST7789_lib/st7789.c
+# )
+
+# target_include_directories(ST7789_lib INTERFACE
+#     ${CMAKE_CURRENT_LIST_DIR}/ST7789_lib/st7789.h
+# )
+
 # Add blink example
 add_subdirectory(src)
+#add_subdirectory(include)
 add_subdirectory(rtos)
-
 
 add_compile_options(-Wall
         -Wno-format          # int != int32_t as far as the compiler is concerned because gcc has int32_t as long int
