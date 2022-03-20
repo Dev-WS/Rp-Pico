@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.12)
 # Pull in SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(pico_examples C CXX ASM)
+project(pico_testproject C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
@@ -16,21 +16,32 @@ set(PICO_EXAMPLES_PATH ${PROJECT_SOURCE_DIR})
 # Initialize the SDK
 pico_sdk_init()
 
-add_library(ST7789_lib INTERFACE)
-
-
-# target_sources(ST7789_lib INTERFACE
-#     ${CMAKE_CURRENT_LIST_DIR}/ST7789_lib/st7789.c
-# )
-
-# target_include_directories(ST7789_lib INTERFACE
-#     ${CMAKE_CURRENT_LIST_DIR}/ST7789_lib/st7789.h
-# )
-
 # Add blink example
-add_subdirectory(src)
+#add_subdirectory(src)
 #add_subdirectory(include)
 add_subdirectory(rtos)
+
+
+set(SOURCES 
+src/main.c
+
+)
+
+set(INCLUDES 
+include/main.h
+)
+
+add_executable(src ${SOURCES} ${INCLUDES})
+
+# target_include_directories(include PRIVATE
+# ${PROJECT_SOURCE_DIR}/include)
+
+
+target_link_libraries(src pico_stdlib hardware_spi freertos)
+
+# create map/bin/hex file etc.
+pico_add_extra_outputs(src)
+
 
 add_compile_options(-Wall
         -Wno-format          # int != int32_t as far as the compiler is concerned because gcc has int32_t as long int

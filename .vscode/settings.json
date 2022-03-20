@@ -3,6 +3,9 @@
         "main.h": "c",
         "freertos.h": "c",
         "st7789.h": "c",
-        "cstdlib": "c"
+        "cstdlib": "c",
+        "epd_test.h": "c",
+        "dev_config.h": "c",
+        "imagedata.h": "c"
     }
 }

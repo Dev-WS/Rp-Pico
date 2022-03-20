@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: pico_examples
+# Project: pico_testproject
 # Configuration: Release
 # =============================================================================
 # =============================================================================
@@ -17,25 +17,6 @@
 rule CUSTOM_COMMAND
   command = $COMMAND
   description = $DESC
-
-
-#############################################
-# Rule for compiling ASM files.
-
-rule ASM_COMPILER__bs2_default
-  depfile = $DEP_FILE
-  deps = gcc
-  command = /usr/bin/arm-none-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
-  description = Building ASM object $out
-
-
-#############################################
-# Rule for linking ASM executable.
-
-rule ASM_EXECUTABLE_LINKER__bs2_default
-  command = $PRE_LINK && /usr/bin/arm-none-eabi-gcc $FLAGS -Wl,--build-id=none $LINK_FLAGS $in  -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
-  description = Linking ASM executable $TARGET_FILE
-  restat = $RESTAT
 
 
 #############################################
@@ -74,6 +55,25 @@ rule CXX_COMPILER__src
 rule CXX_EXECUTABLE_LINKER__src
   command = $PRE_LINK && /usr/bin/arm-none-eabi-g++  $FLAGS -Wl,--build-id=none $LINK_FLAGS $in  -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling ASM files.
+
+rule ASM_COMPILER__bs2_default
+  depfile = $DEP_FILE
+  deps = gcc
+  command = /usr/bin/arm-none-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
+  description = Building ASM object $out
+
+
+#############################################
+# Rule for linking ASM executable.
+
+rule ASM_EXECUTABLE_LINKER__bs2_default
+  command = $PRE_LINK && /usr/bin/arm-none-eabi-gcc $FLAGS -Wl,--build-id=none $LINK_FLAGS $in  -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  description = Linking ASM executable $TARGET_FILE
   restat = $RESTAT
 
 
