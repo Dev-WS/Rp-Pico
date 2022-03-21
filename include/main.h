@@ -9,4 +9,6 @@
 #include "pico/stdlib.h"
 #include "hardware/spi.h"
 
+#include "EPD_Test.h"   //Examples
+
 #endif

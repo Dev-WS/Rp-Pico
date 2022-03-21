@@ -24,12 +24,33 @@ add_subdirectory(rtos)
 
 set(SOURCES 
 src/main.c
-
 )
 
 set(INCLUDES 
 include/main.h
 )
+
+
+add_subdirectory(lib/Config)
+add_subdirectory(lib/Infrared)
+add_subdirectory(lib/OLED)
+add_subdirectory(lib/Icm20948)
+add_subdirectory(lib/LCD)
+add_subdirectory(lib/Fonts)
+add_subdirectory(lib/GUI)
+add_subdirectory(examples)
+
+
+
+#添加头文件目录
+include_directories(examples)
+include_directories(./lib/Config)
+include_directories(./lib/GUI)
+include_directories(./lib/Icm20948)
+include_directories(./lib/LCD)
+include_directories(./lib/Infrared)
+include_directories(./lib/OLED)
+
 
 add_executable(src ${SOURCES} ${INCLUDES})
 
@@ -37,7 +58,9 @@ add_executable(src ${SOURCES} ${INCLUDES})
 # ${PROJECT_SOURCE_DIR}/include)
 
 
-target_link_libraries(src pico_stdlib hardware_spi freertos)
+#target_link_libraries(src pico_stdlib hardware_spi freertos)
+
+target_link_libraries(src freertos examples LCD OLED Infrared Icm20948 GUI Fonts Config pico_stdlib hardware_spi)
 
 # create map/bin/hex file etc.
 pico_add_extra_outputs(src)

@@ -6,6 +6,7 @@
         "cstdlib": "c",
         "epd_test.h": "c",
         "dev_config.h": "c",
-        "imagedata.h": "c"
+        "imagedata.h": "c",
+        "lcd_2in.h": "c"
     }
 }
